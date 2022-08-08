@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 200px;
+    border: 3px solid #31AB4C;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.icon-status {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.infos {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .build-nb {
+        display: flex;
+        width: fit-content;
+        border-bottom: 1px solid black;
+        cursor: pointer;
+
+        img {
+            width: 15px;
+            margin-right: 5px;
+        }
+    }
+
+    p {
+        margin: 0px;
+        margin-top: 3px;
+    }
+}
+
+.device-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 20px;
+
+    img {
+        width: 130px;
+    }
+}
+
+.sub-title {
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+}

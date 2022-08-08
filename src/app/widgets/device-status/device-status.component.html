@@ -1,0 +1,9 @@
+<div class="list">
+    <div [ngClass]="{'item-building': deviceStatus.isBuilding, 'item-disabled': deviceStatus.isDisabled}" class="item" *ngFor="let deviceStatus of listOfDevicesStatus">
+        <p>{{deviceStatus.deviceName}}</p>
+        <div class="status">
+            <img *ngIf="deviceStatus.isBuilding" src="assets/img/loading.svg" alt="">
+            {{deviceStatus.status}}
+        </div>
+    </div>
+</div>

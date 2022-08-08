@@ -1,0 +1,37 @@
+.list {
+    max-height: 200px;
+}
+
+.item {
+    display: flex;
+    border-bottom: 1.5px solid #D9D9D9;
+    width: 350px;
+
+    .status {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        img {
+            margin-right: 10px;
+        }
+    }
+
+    p {
+        margin-top: 13px;
+        margin-bottom: 13px;
+        color: #373737;
+    }
+}
+
+.item-building {
+    * {
+        color: #0098DB !important;
+    }
+}
+
+.item-disabled {
+    * {
+        color: #5C5C5C !important;
+    }
+}

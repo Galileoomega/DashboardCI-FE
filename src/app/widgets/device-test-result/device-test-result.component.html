@@ -1,0 +1,17 @@
+<div class="container">
+    <img class="icon-status" src="assets/img/tests/valid.svg" alt="">
+
+    <div class="infos">
+        <p class="sub-title">{{testPlanInfos.planName}}</p>
+        <p>{{testPlanInfos.planBranch}}</p>
+        <div class="build-nb">
+            <img src="assets/img/paper-clip.svg" alt="">
+            <p>Build no. {{testPlanInfos.planBuildNumber}}</p>
+        </div>
+        <p>{{testPlanInfos.planDateOfBuild}}</p>
+    </div>
+
+    <div class="device-icon">
+        <img [src]="iconPath" alt="">
+    </div>
+</div>

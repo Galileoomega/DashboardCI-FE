@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: baseline;
+
+    .text {
+        color: #686868;
+        margin-right: 10px;
+    }
+
+    .value {
+        font-size: 30px;
+    }
+}

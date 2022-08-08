@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+// FONTS
+@font-face {
+    font-family: 'Inter Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Regular'), url('./assets/fonts/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Medium'), url('./assets/fonts/Inter-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter Semi Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Semi Bold'), url('./assets/fonts/Inter-SemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Bold'), url('./assets/fonts/Inter-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Inter Extra Bold'), url('./assets/fonts/Inter-ExtraBold.woff') format('woff');
+}
+
+// CONTAINERS
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family:'Inter Medium';
+}
+
+body {
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    
+    .main-logo {
+        width: 150px;
+        margin-right: 30px;
+    }
+
+    .timer {
+        margin-left: auto;
+    }
+}
+
+.title {
+    color: #0098DB;
+    font-family:'Inter Extra Bold';
+}
+
+.bold {
+    font-family:'Inter Bold';
+}
+
+.sub-title {
+    font-family:'Inter Semi Bold';
+    font-size: 24px !important;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        width: 100%;
+        max-width: 50%;
+        padding-right: 30px;
+        box-sizing: border-box;
+    }
+}
+
+.grid > div {
+    flex: 50%;  
+    margin-bottom: 30px;
+}
