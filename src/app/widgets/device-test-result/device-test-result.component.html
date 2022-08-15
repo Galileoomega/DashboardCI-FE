@@ -1,5 +1,6 @@
-<div class="container">
-    <img class="icon-status" src="assets/img/tests/valid.svg" alt="">
+<div [ngClass]="{'test-valid': testPlanInfos.testValid, 'test-error': !testPlanInfos.testValid}" class="container">
+    <img *ngIf="testPlanInfos.testValid" class="icon-status" src="assets/img/tests/valid.svg" alt="">
+    <img *ngIf="!testPlanInfos.testValid" class="icon-status" src="assets/img/tests/error.svg" alt="">
 
     <div class="infos">
         <p class="sub-title">{{testPlanInfos.planName}}</p>
@@ -9,6 +10,8 @@
             <p>Build no. {{testPlanInfos.planBuildNumber}}</p>
         </div>
         <p>{{testPlanInfos.planDateOfBuild}}</p>
+        
+        <p class="error">{{testPlanInfos.testResult}}</p>
     </div>
 
     <div class="device-icon">

@@ -9,6 +9,43 @@
     padding: 20px;
 }
 
+.test-valid {
+    border-color: #31AB4C;
+
+    .build-nb {
+        filter: invert(49%) sepia(28%) saturate(6165%) hue-rotate(104deg) brightness(107%) contrast(62%);
+        p {
+            color: black !important;
+        }
+    }
+
+    * {
+        color: #31AB4C;
+    }
+}
+
+.test-error {
+    border-color: #EE5353;
+
+    .build-nb {
+        filter: invert(47%) sepia(89%) saturate(3716%) hue-rotate(333deg) brightness(104%) contrast(87%);
+        p {
+            color: black !important;
+        }
+    }
+
+    * {
+        color: #EE5353;
+    }
+}
+
+.error {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: 13px !important;
+    font-family: "Inter Semi Bold";
+}
+
 .icon-status {
     width: 30px;
     margin-right: 15px;
