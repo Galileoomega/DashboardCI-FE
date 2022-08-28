@@ -2,7 +2,7 @@
   <img class="main-logo" src="assets/img/main-logo.png" alt="">
   <h1 class="title">RESULTS OF THE CI TEST BENCH</h1>
 
-  <app-time-update class="timer"></app-time-update>
+  <app-update-date [linkedToComponent]="'testPlan'" class="timer"></app-update-date>
 </div>
 
 <div class="grid">
@@ -14,7 +14,7 @@
 
 <div class="header">
   <p style="color: #878787;" class="sub-title">Device status</p>
-  <app-time-update class="timer"></app-time-update>
+  <app-update-date [linkedToComponent]="'deviceStatus'" class="timer"></app-update-date>
 </div>
 
 <app-device-status></app-device-status>

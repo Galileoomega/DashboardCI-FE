@@ -4,14 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TimeUpdateComponent } from './widgets/time-update/time-update.component';
+import { UpdateDateComponent } from './widgets/update-date/update-date.component';
 import { DeviceTestResultComponent } from './widgets/device-test-result/device-test-result.component';
 import { DeviceStatusComponent } from './widgets/device-status/device-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimeUpdateComponent,
+    UpdateDateComponent,
     DeviceTestResultComponent,
     DeviceStatusComponent
   ],
