@@ -1,11 +1,16 @@
 .list {
-    max-height: 200px;
+    max-height: calc(100% - 730px);
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .item {
     display: flex;
     border-bottom: 1.5px solid #D9D9D9;
-    width: 350px;
+    width: 340px;
+    margin-right: 40px;
 
     .status {
         display: flex;

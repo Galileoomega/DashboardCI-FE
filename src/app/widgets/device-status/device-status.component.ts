@@ -14,9 +14,30 @@ export class DeviceStatusComponent implements OnInit {
   constructor(private dataCollector: DataCollectorService) { }
 
   ngOnInit(): void {
+    this.getDevicesStatusResults();
+
+    this.listOfDevicesStatus = [
+      new DeviceStatus("Eagle", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 1", "Idle", false, false),
+      new DeviceStatus("Eagle 2", "Ogdfsgsdfgdfgsdfgsdfsdfdfsk", true, false)
+    ]
+  }
+
+  private getDevicesStatusResults(): void {
     this.dataCollector.getDevicesStatus().subscribe(response => {
       this.listOfDevicesStatus = response;
-      console.log(this.listOfDevicesStatus)
     });
   }
 }
