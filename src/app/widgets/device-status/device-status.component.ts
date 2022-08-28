@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceStatus } from 'src/app/models/deviceStatus.model';
+import { DataCollectorService } from 'src/app/services/data-collector.service';
 
 @Component({
   selector: 'app-device-status',
@@ -8,11 +9,14 @@ import { DeviceStatus } from 'src/app/models/deviceStatus.model';
 })
 export class DeviceStatusComponent implements OnInit {
 
-  @Input() public listOfDevicesStatus: Array<DeviceStatus>;
+  public listOfDevicesStatus: Array<DeviceStatus>;
 
-  constructor() { }
+  constructor(private dataCollector: DataCollectorService) { }
 
   ngOnInit(): void {
+    this.dataCollector.getDevicesStatus().subscribe(response => {
+      this.listOfDevicesStatus = response;
+      console.log(this.listOfDevicesStatus)
+    });
   }
-
 }
