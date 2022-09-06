@@ -5,12 +5,7 @@
   <app-update-date [linkedToComponent]="'testPlan'" class="timer"></app-update-date>
 </div>
 
-<div class="grid">
-  <div class="item" *ngFor="let testResult of listOfTestsResults">
-    <app-device-test-result [testPlanInfos]="testResult"></app-device-test-result>
-  </div>
-</div>
-
+<app-device-test-result></app-device-test-result>
 
 <div style="margin-bottom: 0px;" class="header">
   <p style="color: #878787;" class="sub-title">Device status</p>

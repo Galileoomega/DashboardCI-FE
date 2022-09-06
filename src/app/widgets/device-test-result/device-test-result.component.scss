@@ -3,7 +3,7 @@
     align-items: flex-start;
     width: 100%;
     height: 200px;
-    border: 3px solid #31AB4C;
+    border: 3px solid;
     border-radius: 10px;
     box-sizing: border-box;
     padding: 20px;
@@ -13,6 +13,7 @@
     border-color: #31AB4C;
 
     .build-nb {
+        border-color: black;
         filter: invert(49%) sepia(28%) saturate(6165%) hue-rotate(104deg) brightness(107%) contrast(62%);
         p {
             color: black !important;
@@ -26,11 +27,45 @@
 
 .test-error {
     border-color: #EE5353;
+    background-color: #EE5353;
+
+    .build-nb {
+        img {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(18deg) brightness(101%) contrast(100%);
+        }
+    }
+
+    animation: blink 2s step-end infinite;
+}
+
+.blinking {
+    animation: blink 2s step-end infinite;
+}
+
+@keyframes blink {
+    0% {
+        background-color: white;
+        color: #EE5353;
+    }
+
+    50% {
+        background-color: #EE5353;
+        color: white;
+    }
+
+    100% {
+        background-color: white;
+        color: #EE5353;
+    }
+}
+
+.test-warning {
+    border-color: #EE5353;
 
     .build-nb {
         filter: invert(47%) sepia(89%) saturate(3716%) hue-rotate(333deg) brightness(104%) contrast(87%);
         p {
-            color: black !important;
+            color: white !important;
         }
     }
 
@@ -48,6 +83,7 @@
 
 .icon-status {
     width: 30px;
+    min-width: 30px;
     margin-right: 15px;
 }
 
@@ -58,12 +94,18 @@
 
     .build-nb {
         display: flex;
+        align-items: center;
+        height: 22px;
         width: fit-content;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid;
         cursor: pointer;
 
-        img {
-            width: 15px;
+        p {
+            margin: 0px !important;
+        }
+
+        svg {
+            width: 16px;
             margin-right: 5px;
         }
     }
@@ -82,7 +124,7 @@
     margin-right: 20px;
 
     img {
-        width: 130px;
+        width: 120px;
     }
 }
 

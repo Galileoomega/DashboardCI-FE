@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TestResult } from 'src/app/models/testResult.model';
+import { DataCollectorService } from 'src/app/services/data-collector.service';
+import { TimeUpdaterService } from 'src/app/services/time-updater.service';
 
 @Component({
   selector: 'app-device-test-result',
@@ -7,6 +9,8 @@ import { TestResult } from 'src/app/models/testResult.model';
   styleUrls: ['./device-test-result.component.scss']
 })
 export class DeviceTestResultComponent implements OnInit {
+
+  public listOfTestsResults: Array<TestResult> = [];
 
   // Retrieve the test plan informations.
   @Input() public testPlanInfos: TestResult;
@@ -18,26 +22,44 @@ export class DeviceTestResultComponent implements OnInit {
   private seaCloudRegex = new RegExp("SeaCloud");
   private eagleRegex = new RegExp("Eagle");
   
-  constructor() { }
+  constructor(private timeUpdater: TimeUpdaterService, private dataCollector: DataCollectorService) { }
 
   ngOnInit(): void {
-    this.matchIconWithPlanName(this.testPlanInfos.planName);
+    this.getTestsResults();
+      
+    this.timeUpdater.getUpdateTick("testPlan").subscribe({
+      next: value => {
+        this.getTestsResults();
+        console.log("Updated")
+      }
+    });
+  }
+
+  private getTestsResults(): void {
+    this.dataCollector.getTestsResults().subscribe(response => {
+      this.listOfTestsResults = response;
+      console.log(response)
+    });
   }
 
   // This function search the device name in the plan name and add the icon name to the full path.
   // Require one argument : The full name of the plan. 
-  private matchIconWithPlanName(planName: string): void {
+  public matchIconWithPlanName(planName: string): string {
+    let deviceIcon = this.iconPath;
+
     // Check for SeaCloud.
     if(this.seaCloudRegex.test(planName)) {  
-      this.iconPath += "SC4200.png";
+      deviceIcon += "SC4200.png";
     }
     // Check for Eagle.
     else if(this.eagleRegex.test(planName)) {  
-      this.iconPath += "eagle.png";
+      deviceIcon += "eagle.png";
     }
     // If not add the FPM icon.
     else {  
-      this.iconPath += "SC1500.png";
+      deviceIcon += "SC1500.png";
     }
+
+    return deviceIcon;
   }
 }

@@ -11,12 +11,12 @@ import { DataCollectorService } from './services/data-collector.service';
 export class AppComponent {
   title = 'dashboardCI';
 
-  public listOfTestsResults: Array<TestResult> = [
-    new TestResult("Fusion FCC Eagle Nighly", "Master", "3866", "28.06.2022  02:06", false, "unit test has failed"),
-    new TestResult("Fusion FCC SeaCloud Nightly", "Release/MSM_r2022_1_candidate", "3866", "28.06.2022  02:06", true, ""),
-    new TestResult("Fusion FCC FPM Nightly", "Release/MSM_r2022_1_candidate", "3866", "28.06.2022  02:06", true, ""),
-    new TestResult("Fusion FCC SeaCloud Daily", "Release/MSM_r2022_1_candidate", "3866", "28.06.2022  02:06", true, "")
-  ];
+  // public listOfTestsResults: Array<TestResult> = [
+  //   new TestResult("Fusion FCC Eagle Nighly", "Master", "3866", "28.06.2022  02:06", false, true),
+  //   new TestResult("Fusion FCC SeaCloud Nightly", "Release/MSM_r2022_1_candidate", "3866", "28.06.2022  02:06", true, false),
+  //   new TestResult("Fusion FCC FPM Nightly", "Release/MSM_r2022_1_candidate", "3866", "28.06.2022  02:06", true, false),
+  //   new TestResult("Fusion FCC SeaCloud Daily", "Release/MSM_r2022_1_candidate", "3866", "28.06.2022  02:06", true, false)
+  // ];
 
   constructor(private dataCollector: DataCollectorService) {}
 
