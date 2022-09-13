@@ -1,4 +1,9 @@
-<div class="grid">
+<div class="loader-container" *ngIf="askingData">
+    <span class="loader"></span>
+    <p>LOADING DEVICES..</p>
+</div>
+
+<div *ngIf="askingData == false" class="grid">
     <div class="item" *ngFor="let testPlanInfos of listOfTestsResults">
         <div 
             [ngClass]="{

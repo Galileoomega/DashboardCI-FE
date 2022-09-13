@@ -1,4 +1,9 @@
-<div class="list">
+<div class="loader-container" *ngIf="askingData">
+    <span class="loader"></span>
+    <p>LOADING DEVICES STATUS..</p>
+</div>
+
+<div *ngIf="askingData == false" class="list">
     <div [ngClass]="{'item-building': device.isBuilding, 'item-disabled': device.isDisabled}" class="item" *ngFor="let device of listOfDevicesStatus">
         <p>{{device.deviceName}}</p>
         <div class="status">

@@ -10,7 +10,7 @@ import { TimeUpdaterService } from 'src/app/services/time-updater.service';
 })
 export class DeviceTestResultComponent implements OnInit {
 
-  public listOfTestsResults: Array<TestResult> = [];
+  public listOfTestsResults: Array<TestResult>;
 
   // Retrieve the test plan informations.
   @Input() public testPlanInfos: TestResult;
@@ -21,6 +21,8 @@ export class DeviceTestResultComponent implements OnInit {
   // Regex variables. They will be used to find the correct image for the plan name.
   private seaCloudRegex = new RegExp("SeaCloud");
   private eagleRegex = new RegExp("Eagle");
+
+  public askingData: boolean = true;
   
   constructor(private timeUpdater: TimeUpdaterService, private dataCollector: DataCollectorService) { }
 
@@ -36,9 +38,14 @@ export class DeviceTestResultComponent implements OnInit {
   }
 
   private getTestsResults(): void {
-    this.dataCollector.getTestsResults().subscribe(response => {
+    if(this.listOfTestsResults == undefined) {
+      this.askingData = true;
+    }
+
+    this.dataCollector.getTestsResults().subscribe((response: Array<TestResult>) => {
       this.listOfTestsResults = response;
       console.log(response)
+      this.askingData = false;
     });
   }
 
