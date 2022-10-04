@@ -9,7 +9,7 @@ import { TestResult } from '../models/testResult.model';
 })
 export class DataCollectorService {
 
-  private API_URL = "http://127.0.0.1:5000";
+  private API_URL = "http://bamboo.hach.ewqg.com/rest/api/latest/";
 
   constructor(private http: HttpClient) { }
 

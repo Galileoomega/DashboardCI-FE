@@ -35,7 +35,11 @@
                     <p>Build no. {{testPlanInfos.planBuildNumber}}</p>
                 </div>
                 <p>{{testPlanInfos.planDateOfBuild}}</p>
+                
+                <p *ngIf="testPlanInfos.buildFailed" class="error-message">BUILD HAS FAILED</p>
+                <p *ngIf="testPlanInfos.unitTestFailed" class="error-message">UNIT TEST HAVE FAILED</p>
             </div>
+
         
             <div class="device-icon">
                 <img [src]="matchIconWithPlanName(testPlanInfos.planName)" alt="">
